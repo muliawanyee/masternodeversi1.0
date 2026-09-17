@@ -35,10 +35,6 @@ body { background: #000000; color: #ffffff; overflow-x: hidden; }
 .login-footer { text-align: center; margin-top: 2rem; color: #6b7280; font-size: 0.875rem; }
 .login-footer a { color: #f59e0b; text-decoration: none; font-weight: 600; }
 .login-footer a:hover { text-decoration: underline; }
-.demo-credentials { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 0.5rem; padding: 1rem; margin-top: 1.5rem; font-size: 0.875rem; }
-.demo-credentials h4 { color: #3b82f6; margin-bottom: 0.5rem; font-weight: 600; }
-.demo-credentials p { color: #9ca3af; margin: 0.25rem 0; }
-.demo-credentials code { background: rgba(0, 0, 0, 0.3); padding: 0.125rem 0.375rem; border-radius: 0.25rem; color: #f59e0b; font-family: 'Courier New', monospace; }
 .gradient-bg { background: linear-gradient(to bottom, #1a1a1a, #000000); }
 .gradient-border { border: 1px solid rgba(245, 158, 11, 0.2); }
 .hover-scale { transition: transform 0.2s ease-in-out; }
@@ -200,11 +196,6 @@ body { background: #000000; color: #ffffff; overflow-x: hidden; }
 <input type="password" id="login-password" class="login-input" placeholder="Password" required autocomplete="current-password" />
 <button type="submit" id="login-button" class="login-button">Masuk</button>
 </form>
-<div class="demo-credentials">
-<h4>🔑 Demo Credentials</h4>
-<p>Username: <code>admin</code></p>
-<p>Password: <code>admin123</code></p>
-</div>
 <div class="login-footer">
 <p>Belum punya akun? <a href="#" onclick="showRegisterInfo(); return false;">Daftar sekarang</a></p>
 </div>
@@ -562,6 +553,7 @@ Beli Private Key di menu <span class="text-purple-400 font-semibold cursor-point
 <div class="flex items-center justify-between mb-4"><h4 class="text-gray-400">Redeemed</h4><i data-lucide="check-check" class="text-blue-400 w-5 h-5"></i></div>
 <div id="pk-redeemed-keys" class="text-2xl font-bold text-white">0</div>
 <p class="text-sm text-blue-400 mt-1">Sudah digunakan</p>
+</div>
 </div>
 </div>
 </div>
@@ -1122,7 +1114,7 @@ document.getElementById('login-button').textContent = 'Masuk';
 return false;
 }
 function showRegisterInfo() {
-alert('Fitur registrasi akan segera hadir!\nUntuk demo, gunakan:\nUsername: admin\nPassword: admin123');
+alert('Fitur registrasi akan segera hadir!\nSilakan hubungi admin untuk pendaftaran.');
 return false;
 }
 let currentPage = 'dashboard';
