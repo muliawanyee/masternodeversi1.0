@@ -426,13 +426,13 @@ Beli Private Key di menu <span class="text-purple-400 font-semibold cursor-point
 <div>
 <p><strong>• Node Status:</strong> <span id="node-status">Belum Aktif</span></p>
 <p><strong>• Auto Stop:</strong> Setiap hari jam 06:00</p>
-<p><strong>• Auto Claim:</strong> Hanya saat validasi running</p>
+<p><strong>• Auto Claim:</strong> Setiap 60 detik (masuk Pending Reward)</p>
 <p><strong>• Masa Berlaku Validasi:</strong> <span id="masa-berlaku" style="color: #ef4444; font-weight: 600;">40.000.000 detik</span></p>
 </div>
 <div>
 <p><strong>• Minimal Stake:</strong> 10 BossX (via Private Key)</p>
 <p><strong>• Fee Generate Key:</strong> 1 BossX</p>
-<p><strong>• Reward System:</strong> Masuk Saldo BossX (Dijual di Market)</p>
+<p><strong>• Claim Reward:</strong> Tanpa minimal (kapan saja)</p>
 <p><strong>• Private Key:</strong> 25 karakter, one-time use</p>
 </div>
 </div>
@@ -1320,15 +1320,21 @@ lastClaimTime = Date.now() / 1000;
 currentValidationReward = 0;
 updateBalanceDisplays();
 }
-// FUNGSI BARU: CLAIM TO WALLET (Opsi 2)
+// ============================================
+// FUNGSI CLAIM TO WALLET (TANPA MINIMAL!)
+// ============================================
 function claimToWallet() {
-if (totalRewardBalance < 1) { showErrorMessage('Minimal 1 BossX untuk di-claim!'); return; }
+// Hanya cek apakah ada reward yang bisa di-claim (tidak ada minimal 1 BossX)
+if (totalRewardBalance <= 0) {
+showErrorMessage('Belum ada reward untuk di-claim! Tunggu validasi berjalan.');
+return;
+}
 const claimAmount = totalRewardBalance;
 bossxBalance += claimAmount;
-totalRewardBalance -= claimAmount;
+totalRewardBalance = 0; // Reset ke 0
 updateBalanceDisplays();
 showSuccessMessage(`Berhasil claim ${claimAmount.toFixed(9)} BossX ke Wallet!`);
-appendLog(`[SUCCESS] Claimed ${claimAmount.toFixed(9)} BossX to wallet`, 'pk-success');
+appendLog(`[SUCCESS] Claimed ${claimAmount.toFixed(9)} BossX to wallet (tanpa minimal)`, 'pk-success');
 }
 function updateBalanceDisplays() {
 const el1 = document.getElementById('bossx-balance');
