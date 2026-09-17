@@ -313,15 +313,15 @@ body { background: #000000; color: #ffffff; overflow-x: hidden; }
 </div>
 </div>
 <div class="stats-grid">
-<!-- CARD 1: REDEEM PRIVATE KEY (Tanpa Balance BossX) -->
-<div class="stat-card hover-scale">
+<!-- CARD 1: REDEEM PRIVATE KEY (Flexbox - input/tombol di bawah) -->
+<div class="stat-card hover-scale" style="display: flex; flex-direction: column; justify-content: space-between;">
 <div class="corner-dot top-left"></div><div class="corner-dot top-right"></div><div class="corner-dot bottom-right"></div><div class="corner-dot bottom-left"></div>
 <div class="border-line border-top"></div><div class="border-line border-right"></div><div class="border-line border-bottom"></div><div class="border-line border-left"></div>
 <div class="flex items-center justify-between mb-3">
 <p class="text-sm text-gray-400">Redeem Private Key</p>
 <i data-lucide="key-round" class="w-4 h-4 text-purple-400"></i>
 </div>
-<div class="space-y-3">
+<div class="space-y-3" style="margin-top: auto;">
 <input id="redeem-input" type="text" placeholder="Paste Private Key (25 karakter)" class="node-input" maxlength="25" style="text-transform: uppercase; font-family: 'Courier New', monospace; letter-spacing: 1px;" />
 <button id="redeem-button" class="node-button" onclick="redeemPrivateKey()" style="background: linear-gradient(145deg, #a855f7, #7c3aed);">
 <i data-lucide="unlock" class="w-4 h-4 inline mr-1"></i>Redeem Now
@@ -353,8 +353,8 @@ Beli Private Key di menu <span class="text-purple-400 font-semibold cursor-point
 <p id="power-status" class="text-xs text-gray-500" style="display: none;">Masternode sedang running - Auto stop jam 06:00</p>
 </div>
 </div>
-<!-- CARD 3: REWARD VALIDASI -->
-<div class="stat-card hover-scale">
+<!-- CARD 3: REWARD VALIDASI (Flexbox - tombol Convert di bawah) -->
+<div class="stat-card hover-scale" style="display: flex; flex-direction: column; justify-content: space-between;">
 <div class="corner-dot top-left"></div><div class="corner-dot top-right"></div><div class="corner-dot bottom-right"></div><div class="corner-dot bottom-left"></div>
 <div class="border-line border-top"></div><div class="border-line border-right"></div><div class="border-line border-bottom"></div><div class="border-line border-left"></div>
 <div class="flex items-center justify-between mb-3">
@@ -364,7 +364,7 @@ Beli Private Key di menu <span class="text-purple-400 font-semibold cursor-point
 <div class="text-lg font-bold text-white mb-3">
 <span id="reward-balance">0.000000000 BossX</span>
 </div>
-<div class="space-y-3">
+<div class="space-y-3" style="margin-top: auto;">
 <p class="text-xs text-blue-400">Auto claim in: <span id="auto-claim-timer" class="auto-claim-timer">--</span>s</p>
 <button class="node-button convert-button" onclick="convertToUSDT()">Convert To USDT</button>
 </div>
@@ -553,7 +553,6 @@ Beli Private Key di menu <span class="text-purple-400 font-semibold cursor-point
 <div class="flex items-center justify-between mb-4"><h4 class="text-gray-400">Redeemed</h4><i data-lucide="check-check" class="text-blue-400 w-5 h-5"></i></div>
 <div id="pk-redeemed-keys" class="text-2xl font-bold text-white">0</div>
 <p class="text-sm text-blue-400 mt-1">Sudah digunakan</p>
-</div>
 </div>
 </div>
 </div>
